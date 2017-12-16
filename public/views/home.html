@@ -1,0 +1,57 @@
+<md-content >
+	<md-nav-bar
+			ng-if="user.logged"
+			md-no-ink-bar="disableInkBar"
+			md-selected-nav-item="currentNavItem"
+			nav-bar-aria-label="navigation links">
+
+		<md-nav-item md-nav-click="goTo('stats')" name="stats">
+			Player Stats
+		</md-nav-item>
+		<md-nav-item md-nav-click="goTo('inventory')" name="inventory">
+			Inventory
+		</md-nav-item>
+		<md-nav-item md-nav-click="goTo('auction')" name="auction">
+			Current Auction
+		</md-nav-item>
+
+	</md-nav-bar>
+
+
+	<div class="col-md-12">&nbsp;</div>
+
+	<div ng-if="!user.logged">
+		<form name="loginUser">
+			<div layout-gt-xs="row">
+				<div class="left-blank-space">
+					&nbsp;
+				</div>
+				<div layout-gt-xs="row">
+					<md-input-container class="md-block" flex-gt-xs md-is-error="!user.name">
+						<label>Name</label>
+						<input ng-model="user.name" >
+					</md-input-container>
+
+					<md-button class="md-raised md-primary" ng-click="submitUser()">Enter</md-button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<div ng-if="user.logged">
+		<div ng-if="currentNavItem == 'stats'">
+			<player-stats></player-stats>
+		</div>
+
+		<div ng-if="currentNavItem == 'inventory'">
+			<inventory></inventory>
+		</div>
+
+		<div ng-if="currentNavItem == 'auction'">
+			<auction></auction>
+		</div>
+	</div>
+
+
+</md-content>

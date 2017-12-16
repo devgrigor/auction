@@ -1,0 +1,33 @@
+.hidden {
+	display: none !important;
+}
+
+.left-blank-space {
+	width: 40% !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.center-button {
+	left: 45% !important;
+	width: 10% !important;
+}
+
+.md-avatar {
+	height: 150px !important;
+	width: 150px !important;
+}
+
+md-list-item {
+	border: 2px solid #4dc71f;
+	margin-top: 15px;
+	border-radius: 15px;
+	padding: 10px;
+	background-color: #b8e083;
+}
+
+.padding {
+	padding: 10px;
+}

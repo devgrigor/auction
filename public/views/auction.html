@@ -1,0 +1,41 @@
+<md-content flex layout-padding>
+	<p ng-if="!data">No auction at the moment</p>
+
+	<div class="{{data && data.timer >= 10 ? '' : 'hidden'}}">
+		<h1>Seller: {{data.user_name}}</h1>
+		<md-list-item class="md-3-line" >
+			<img ng-src="{{item.image_url}}" class="md-avatar" />
+			<div class="md-list-item-text" layout="column">
+				<h3>{{ item.name }}</h3>
+			</div>
+
+		</md-list-item>
+
+		<h1>Time left: {{data.timer - 10}}</h1>
+		<h1>{{data.bidder_id ? 'Winning' : 'Minimum'}} bid: {{data.last_bid}}</h1>
+		<h1>Quantity: {{data.quantity}}</h1>
+
+		<form name="loginUser">
+			<div layout-gt-xs="row">
+				<div class="left-blank-space">
+					&nbsp;
+				</div>
+				<div layout-gt-xs="row">
+					<md-input-container class="md-block" flex-gt-xs md-is-error="bid < data.lastbid">
+						<label>Youre bid</label>
+						<input type="number" ng-model="bid.value" >
+					</md-input-container>
+
+					<md-button class="md-raised md-primary" ng-click="makeBid()">Bid</md-button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+	<div class="{{data && data.timer <= 10 ? '' : 'hidden'}}">
+		<h1 class="text-center">The winner is {{winner_name || 'No one'}}</h1>
+	</div>
+
+
+</md-content>

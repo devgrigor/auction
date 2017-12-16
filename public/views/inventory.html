@@ -1,0 +1,14 @@
+<md-content  layout-padding>
+	<md-list class="md-dense" flex>
+		<md-list-item class="md-3-line" ng-repeat="item in items" >
+			<img ng-src="{{item.image_url}}" class="md-avatar" />
+			<div class="md-list-item-text" layout="column">
+				<h1>{{ item.name }}</h1>
+				<h2>{{ item.quantity }}</h2>
+			</div>
+
+			<md-button class="md-primary pull-right" ng-click="startAuction(item)">Start auction</md-button>
+		</md-list-item>
+	</md-list>
+
+</md-content>
