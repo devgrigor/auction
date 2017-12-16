@@ -1,4 +1,4 @@
-
+{
 	"port" : "8080",
 	"db_host": "localhost",
 	"db_port": "3306",
